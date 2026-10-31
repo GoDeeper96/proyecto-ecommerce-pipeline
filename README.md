@@ -57,11 +57,13 @@ El notebook termina con el **recorrido de un evento de punta a punta** por las 1
 
 ```
 ├── Proyecto_Ecommerce.ipynb          notebook principal (etapas 0–9, ya ejecutado)
+├── Informe_Ecommerce.docx            informe técnico
+├── Presentacion_Ecommerce.pptx       diapositivas de la exposición (guion y tiempos en las notas)
 ├── scripts/
 │   ├── generar_dataset_enriquecido.py      genera el stream de 10M eventos (semilla 42)
 │   ├── benchmark_alternativas_etapas_0_5.py
 │   └── benchmark_escalamiento_etapas_0_5.py
-├── docs/                             diagrama del pipeline (.png y .drawio) y gráficos de escalamiento
+├── docs/                             guía de exposición, diccionario de datos, diagrama (.png y .drawio) y gráficos
 ├── datos/muestra_10k.csv             primeras 10,000 filas del dataset enriquecido
 ├── blacklist.csv                     lista negra histórica (Bloom Filter, etapa 6)
 ├── diccionario_columnas.md           columnas del dataset y reglas de derivación
@@ -90,18 +92,30 @@ jupyter notebook Proyecto_Ecommerce.ipynb
 
 El notebook completo procesa 10M de eventos y necesita unos 16 GB de RAM libres. Se ejecutó en un Intel Core i5-12400F con 32 GB de RAM, Windows 11 Pro y Python 3.13.9.
 
+La ejecución completa tarda unos **11 minutos** (sin contar la instalación de librerías):
+
+| Etapa | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Tiempo | 56 s | 3 min 55 s | 1 min 30 s | 44 s | 18 s | 4 s | 1 min 22 s | 1 min 25 s | 11 s | 16 s | ≈ 10 min 40 s |
+
+## Documentación
+
+- [`docs/GUIA_EXPOSICION.md`](docs/GUIA_EXPOSICION.md): contexto completo del proyecto para la exposición. Incluye los datos, cada etapa con su justificación y resultados, las correcciones respecto a la primera versión, las limitaciones y las preguntas probables de la sustentación.
+- [`docs/Diccionario_Datos_OpcionB.docx`](docs/Diccionario_Datos_OpcionB.docx): diccionario de datos, reglas de derivación y matriz columna × etapa.
+- [`Informe_Ecommerce.docx`](Informe_Ecommerce.docx) y [`Presentacion_Ecommerce.pptx`](Presentacion_Ecommerce.pptx): informe técnico y diapositivas del equipo.
+
 ## Roles y contribución individual
 
 | Integrante | Responsable principal (≥ 2 etapas o 1 familia de algoritmos) | Aporte concreto |
 |---|---|---|
-| Mondragón, Harold | [completar] | [completar] |
-| Julon Chamana, Sebastián | [completar] | [completar] |
-| Bravo Andía, Adolfo Andrés | [completar] | [completar] |
-| Mestas Ventocilla, Sergio Eduardo | [completar] | [completar] |
+| Varillas Ramos, Noelia Danitza | Etapas 0, 1 y 6 | [completar] |
+| Julon Chamana, Sebastián | Etapas 3, 4 y 8 | [completar] |
+| Bravo Andía, Adolfo Andrés | Etapas 5 y 7 | [completar] |
+| Mestas Ventocilla, Sergio Eduardo | Etapas 2 y 9 | [completar] |
 
 ## Informe
 
-`Proyecto_Final_[NombreGrupo].pdf` — pendiente de subir (versión final del informe técnico).
+`Proyecto_Final_[NombreGrupo].pdf` — pendiente de subir (versión final del informe técnico en PDF). La versión en Word está en [`Informe_Ecommerce.docx`](Informe_Ecommerce.docx).
 
 ## Referencias principales
 

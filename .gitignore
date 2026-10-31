@@ -233,5 +233,8 @@ Proyecto_Ecommerce_6,7,8y9.ipynb
 notebooks/
 pipeline/
 informe/
-*.docx
+Informe_Proyecto_Final*.docx
+Proyecto EDA - 2026-2.docx
+~$*
+/Diccionario_Datos_OpcionB.docx
 
